@@ -58,7 +58,7 @@ for file in files:
     #HCGSN256_montage = mne.channels.make_standard_montage('GSN-HydroCel-256')
     #raw.set_montage(HCGSN256_montage)
 
-    # [2] MONTAGE
+    # [2] MONTAGE - get the right locaiton of your data
     montage = mne.channels.make_standard_montage('standard_1020')               # Read a built-in standard montage that ships with MNE
     raw_eeg.rename_channels(dict(FP1 = 'Fp1', FP2 = 'Fp2'))                     # Rename channels to match with the montage 
     raw_eeg.set_montage(montage, on_missing='ignore')                           # Add it to the raw object, ignore when channels have missing coordinates
