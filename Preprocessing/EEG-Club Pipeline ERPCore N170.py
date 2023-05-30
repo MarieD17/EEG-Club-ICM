@@ -27,7 +27,7 @@ from mne_icalabel import label_components
 if 'thandrillon' in os.getcwd():
     path_data='/Users/thandrillon/Data/ERPCore/ERPCore_N170/'
 elif 'degrave' in os.getcwd():
-    path_data='your_path'
+    path_data='/Users/marie.degrave/Documents/EEG-Club perso/ERPCore_N170/'
 else:
     path_data='your_path'
 
@@ -279,17 +279,17 @@ evokeds # We can see that he matched the conditions by treating each as if it wa
 
 # "Plot averaged ERP on all subj"
 ERP_mean = mne.viz.plot_compare_evokeds(evokeds,
-                             picks='PO8', show_sensors='upper right',
-                             title='Averaged ERP all subjects',
-                            )
+                                        picks='PO8', show_sensors='upper right',
+                                        title='Averaged ERP all subjects',
+                                        )
 plt.show()
 
 
 #gfp: "Plot averaged ERP on all subj"
 ERP_gfp = mne.viz.plot_compare_evokeds(evokeds,
-                             combine='gfp', show_sensors='upper right',
-                             title='Averaged ERP all subjects',
-                            )
+                                       combine='gfp', show_sensors='upper right',
+                                       title='Averaged ERP all subjects',
+                                       )
 plt.show()
 
 
