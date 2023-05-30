@@ -76,7 +76,7 @@ for file in files:
     # [4] EVENTS
     stim_events=[range(1,40),range(41,80),range(101,140),range(141,180)]        # Recreate the events values : face, car, scrambled face, scrambled car
 
-    (events, event_dict) = mne.events_from_annotations(raw_eeg)                 # Get events and dictionary events from annotations, and merge the events
+    (events, event_dict) = mne.events_from_annotations(raw_eeg)                 # Get events from annotations, and rename them
     events=mne.merge_events(events, list(range(1,41)), 1001, replace_events=True)
     events=mne.merge_events(events, list(range(41,81)), 1002, replace_events=True)
     events=mne.merge_events(events, list(range(101,141)), 1003, replace_events=True)
@@ -96,7 +96,7 @@ for file in files:
     # [5] EPOCHS
     epochs = mne.Epochs(raw_eeg, events, event_id=[face_id,car_id],
                         tmin=-0.2, tmax=1.2, reject=None, preload=True)         # Extract epochs from raw, relative to time-locked events
-    report.add_epochs(epochs=epochs, title='Epochs from "epochs"')              # Add epochs to the report
+    report.add_epochs(epochs=epochs, title='Epochs from "epochs"')              # Create a report with the epochs data 
     savename = "e_" + sub_ID + ".fif"
     epochs.save(path_data+"intermediary/"+savename, overwrite=True)             # Save the report
     
