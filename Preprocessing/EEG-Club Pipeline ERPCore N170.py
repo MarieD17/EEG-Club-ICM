@@ -201,7 +201,8 @@ for file in files:
                       list(evoked_clean_perCond.values()), overwrite=True
                      )                                                          # Write the evoked dataset to a file
     report.add_evokeds(
-        evokeds=[evoked_car,evoked_face,evoked_clean_car,evoked_clean_face,evoked_ica_clean_car,evoked_ica_clean_face],
+        evokeds=[evoked_car,evoked_face,evoked_clean_car,evoked_clean_face,
+                 evoked_ica_clean_car,evoked_ica_clean_face],
         titles=["car", "face","clean car", "clean face",
                 "ica+clean car", "ica+clean face"],                             # Manually specify titles
         n_time_points=5,
